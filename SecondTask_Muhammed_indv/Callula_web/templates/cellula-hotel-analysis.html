@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellula Hotel Data Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .graph-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .graph-container:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .graph-header {
+            background: linear-gradient(to right, #3182ce, #805ad5);
+            color: white;
+            padding: 1rem;
+        }
+        .graph-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .graph-content {
+            padding: 1rem;
+        }
+        .graph-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        .analysis {
+            background-color: #f7fafc;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+        .analysis h3 {
+            margin-top: 0;
+            color: #2d3748;
+        }
+        .analysis p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cellula Hotel Data Analysis</h1>
+        
+        <div class="graph-container">
+            <div class="graph-header">
+                <h2>1. Density Plot of Average Price by Number of Adults</h2>
+            </div>
+            <div class="graph-content">
+                <img src="../static/plot1.png" alt="Density Plot" class="graph-image">
+                <div class="analysis">
+                    <h3>Analysis</h3>
+                    <p>This density plot shows the distribution of average prices based on the number of adults in a booking. Prices for 0-2 adults are clustered around lower values, likely representing standard rooms. Bookings for 3-4 adults show a wider spread and higher average prices, possibly indicating larger rooms or suites. There's a noticeable overlap in price ranges, suggesting flexibility in room assignments based on occupancy.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph-header">
+                <h2>2. Peak and Troughs of Average Price (Hotel Bookings)</h2>
+            </div>
+            <div class="graph-content">
+                <img src="../static/plot2.png" alt="Price Time Series" class="graph-image">
+                <div class="analysis">
+                    <h3>Analysis</h3>
+                    <p>This time series graph illustrates the fluctuations in average booking prices over time. Clear seasonal patterns are visible, with peaks occurring around September each year. The highest peak is observed in September 2018, indicating a potential high season or special event. Troughs typically appear in the winter months, suggesting lower demand during this period. There's an overall upward trend in prices from 2017 to 2018, which could indicate growing popularity or inflation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph-header">
+                <h2>3. Andrews Curves of Hotel Bookings</h2>
+            </div>
+            <div class="graph-content">
+                <img src="../static/plot3.png" alt="Andrews Curves" class="graph-image">
+                <div class="analysis">
+                    <h3>Analysis</h3>
+                    <p>Andrews Curves provide a way to visualize multidimensional data. The red curves represent non-canceled bookings, while green curves show canceled bookings. The symmetry in the curves suggests some consistency in booking patterns. The divergence between red and green curves at certain points may indicate factors that influence cancellations. The complexity of the curves implies that multiple variables affect booking and cancellation behaviors.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph-header">
+                <h2>4. Distribution of Room Types</h2>
+            </div>
+            <div class="graph-content">
+                <img src="../static/plot4.png" alt="Room Type Distribution" class="graph-image">
+                <div class="analysis">
+                    <h3>Analysis</h3>
+                    <p>This treemap visualizes the distribution of different room types. Room Type 1 is overwhelmingly the most common, accounting for about 75% of all rooms. Room Types 4 and 6 are the next most frequent, but significantly less common than Type 1. Room Types 2, 5, 7, and 3 are relatively rare, possibly representing specialty or luxury options. The hotel might consider diversifying its room offerings or investigating why Type 1 is so dominant.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph-header">
+                <h2>5. Distribution of Meal Types</h2>
+            </div>
+            <div class="graph-content">
+                <img src="../static/plot5.png" alt="Meal Type Distribution" class="graph-image">
+                <div class="analysis">
+                    <h3>Analysis</h3>
+                    <p>This treemap shows the distribution of meal plan selections. Meal Plan 1 is the most popular choice, selected by a large majority of guests. 'Not Selected' is the second most common option, indicating many guests opt out of meal plans. Meal Plan 2 is chosen by a small but significant number of guests. Meal Plan 3 is rarely selected, suggesting it might be a premium option or not well-promoted. The hotel could investigate why so many guests choose not to select a meal plan and consider adjusting their offerings.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="graph-container">
+                <div class="graph-header">
+                    <h2>6. Distribution of Number of Children</h2>
+                </div>
+                <div class="graph-content">
+                    <img src="../static/plot6.png" alt="Distribution of Number of Children" class="graph-image">
+                    <div class="analysis">
+                        <h3>Analysis</h3>
+                        <p>This graph shows the distribution of the number of children in hotel bookings:
+                        <ul>
+                            <li>0 children: 33,550 bookings (most common)</li>
+                            <li>1 child: 1,620 bookings</li>
+                            <li>2 children: 1,056 bookings</li>
+                            <li>3 children: 121 bookings (least common)</li>
+                        </ul>
+                        The vast majority of bookings are for guests without children, which could inform marketing strategies and room allocation policies.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="graph-container">
+                <div class="graph-header">
+                    <h2>7. Average Price vs Lead Time and Special Requests</h2>
+                </div>
+                <div class="graph-content">
+                    <img src="../static/plot7.png" alt="Average Price vs Lead Time and Special Requests" class="graph-image">
+                    <div class="analysis">
+                        <h3>Analysis</h3>
+                        <p>This scatter plot illustrates the relationship between average price, lead time, and special requests:
+                        <ul>
+                            <li>The x-axis represents lead time (days between booking and arrival).</li>
+                            <li>The y-axis shows the average price.</li>
+                            <li>The color of each point indicates the number of special requests (from 0 to 5).</li>
+                        </ul>
+                        Key observations:
+                        <ul>
+                            <li>There's a slight trend of higher prices for bookings made further in advance (longer lead times).</li>
+                            <li>Bookings with more special requests (darker colors) tend to have higher average prices.</li>
+                            <li>The majority of bookings cluster in the 0-200 day lead time range and $50-$250 price range.</li>
+                            <li>There are some outliers with very high prices, particularly for shorter lead times.</li>
+                        </ul>
+                        This information can be useful for pricing strategies and understanding the relationship between advance bookings, special requests, and pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

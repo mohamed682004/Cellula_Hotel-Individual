@@ -1,0 +1,604 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+/* CSS Variables for Consistent Styling */
+:root {
+    --primary-color: #5c3c2d;
+    --secondary-color: #7a6457;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --header-overlay: rgba(0, 0, 0, 0.3);
+    --nav-background: rgba(0, 0, 0, 0.7);
+    --btn-bg: rgba(0, 0, 0, 0.6);
+    --btn-hover-bg: rgba(0, 0, 0, 0.8);
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --footer-bg: #333;
+    --footer-text: #fff;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+
+/* Header Styles */
+header {
+    background-image: url("../static/pexels-nikoosan-297983.jpg"); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--header-overlay);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400; 
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0.5rem 0 2rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin: 0 0.5rem;
+    background-color: var(--btn-bg);
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover-bg);
+    transform: scale(1.05);
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--nav-background);
+    position: fixed; /* Make navigation fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    margin: 0 2rem;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #fff;
+    color: var(--text-color);
+}
+/* Accommodations Styles */
+.accommodations {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--background-color);
+}
+
+.accommodation-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.accommodation-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--card-shadow);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: left;
+}
+
+.accommodation-card img {
+    width: 100%;
+    height: auto;
+}
+
+.accommodation-info {
+    padding: 1rem;
+}
+
+.accommodation-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.accommodation-info p {
+    margin: 0.5rem 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--secondary-color);
+}
+/* In the Press Section Styles */
+/* In the Press Section Styles */
+/* Full-Screen Background Section */
+.in-the-press {
+    background-image: url('../static/hallway-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.in-the-press::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.in-the-press h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial {
+    flex-basis: calc(33% - 2rem);
+    min-width: 250px;
+}
+
+.testimonial blockquote {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.testimonial blockquote::before,
+.testimonial blockquote::after {
+    content: '"';
+    font-size: 4rem;
+    position: absolute;
+    opacity: 0.3;
+}
+
+.testimonial blockquote::before {
+    top: -1rem;
+    left: -1rem;
+}
+
+.testimonial blockquote::after {
+    bottom: -2rem;
+    right: -1rem;
+}
+
+.testimonial cite {
+    font-style: normal;
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        flex-basis: 100%;
+    }
+}
+
+/* ... (previous styles remain the same) ... */
+
+/* Family Suite Section Styles */
+.family-suite {
+    background-color: #f9f5f2; /* Light beige background */
+    padding: 4rem 0;
+}
+
+.family-suite-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.family-suite .text-content {
+    flex: 1;
+}
+
+.family-suite h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.family-suite p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.family-suite .image-content {
+    flex: 1;
+    position: relative;
+}
+
+.family-suite img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.family-suite .caption {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Responsive design for Family Suite section */
+@media (max-width: 768px) {
+    .family-suite-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .family-suite .image-content {
+        margin-top: 2rem;
+    }
+
+    .family-suite .caption {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin-top: 1rem;
+    }
+}
+
+/* ... (rest of the styles remain the same) ... */
+
+/* Section: Two-Column Layout */
+.two-column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+    gap: 2rem;
+}
+
+.two-column .text-content {
+    width: 45%;
+}
+
+.two-column .image-content {
+    width: 45%;
+}
+
+.two-column img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.two-column img:hover {
+    transform: scale(1.05);
+}
+
+.two-column h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.two-column p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    line-height: 1.8;
+}
+
+/* Additional Section Styles for Second Page */
+.section {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+.section:nth-of-type(even) {
+    background-color: var(--background-color);
+}
+
+.section h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.section p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Card Styles for Content Presentation */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--card-shadow);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Pagination Dots */
+.pagination-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .two-column {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    header h1 {
+        font-size: 3.5rem;
+    }
+    
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .two-column {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .two-column .text-content, 
+    .two-column .image-content {
+        width: 100%;
+    }
+
+    .two-column h2 {
+        font-size: 2.5rem;
+    }
+
+    .two-column p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: var(--nav-background);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 200px;
+        transition: right 0.3s ease;
+    }
+
+    nav ul.open {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 1.5rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Accessibility Enhancements */
+a:focus, button:focus {
+    outline: 2px dashed var(--primary-color);
+    outline-offset: 4px;
+}

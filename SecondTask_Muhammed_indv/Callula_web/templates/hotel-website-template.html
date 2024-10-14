@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellula Hotel - Resort & Spa</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+        }
+        .welcome-section {
+            background-image: url('path/to/your/tree-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .text-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .text-content {
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="#header">HOME</a></li>
+                <li><a href="#welcome">Welcome</a></li>
+                <li><a href="#accommodations">Accommodation</a></li>
+                <li><a href="#footer">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <p class="welcome-text">Welcome to</p>
+            <h1>Cellula Hotel</h1>
+            <p>Resort & Spa Hotel</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('predictpage') }}" class="btn">CANCELLATION PREDICTION</a>
+                <a href="{{ url_for('analysis') }}" class="btn">LEARN MORE</a>
+            </div>
+        </div>
+    </header>+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <body>
+        <section id="welcome"class="welcome-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h2> Welcome to Cellula Hotel: Where Statistics Meet Luxury!</h2>
+                    <p> Greetings, data enthusiasts and comfort seekers! Welcome to Cellula Hotel, where we take your stay as seriously as a statistician takes their p-values.
+                        
+                        Did you know our average guest spends precisely 2.7 nights with us during the week? That's right, we're so comfortable, people forget to check out! And weekends? Well, let's just say our "Distribution of Weekend Nights" graph looks suspiciously like our guests' heart rates when they realize they have to leave.
+                        
+                        Now, about children - our "Number of Children" distribution shows a mean of 0.11. We're not entirely sure what 0.11 of a child looks like, but we promise to accommodate all 0.11 of them with the utmost care!
+                        
+                        Speaking of care, our "lead time" graph suggests that some of you plan your stays faster than you can say "spontaneous vacation," while others meticulously plot their visits like it's a mission to Mars. Don't worry, we love you all equally - just don't ask us about our bell curve of guest quirkiness!
+                        
+                        So whether you're here for a week, a weekend, or just long enough to skew our data, make yourself at home. At Cellula Hotel, we're not just a place to stay; we're a statistically significant experience!.</p>
+                </div>
+                <div class="image-content">
+                    <img src="../static/pexels-adriancuj-2404127.jpg" alt="Luxurious Hotel">
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>
+
+    
+        <!-- Accommodations Section -->
+        <style>
+            .accommodations {
+                padding: 4rem 2rem;
+                background-color: #f8f9fa;
+            }
+            
+            .accommodations h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                color: #333;
+                margin-bottom: 2rem;
+            }
+            
+            .accommodation-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+            
+            .accommodation-card {
+                background-color: #fff;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .accommodation-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            }
+            
+            .accommodation-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            
+            .accommodation-info {
+                padding: 1.5rem;
+            }
+            
+            .accommodation-info p:first-child {
+                font-size: 0.9rem;
+                color: #6c757d;
+                margin-bottom: 0.5rem;
+            }
+                        .accommodation-info h3 {
+                font-size: 1.5rem;
+                color: #333;
+                margin-bottom: 0.5rem;
+            }
+            
+            .accommodation-info p:last-child {
+                font-size: 1.1rem;
+                color: #28a745;
+                font-weight: bold;
+            }
+            
+            .book-now-btn {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 1rem;
+                transition: background-color 0.3s ease;
+            }
+            
+            .book-now-btn:hover {
+                background-color: #0056b3;
+            }
+        </style>
+        
+        <section id="accommodations"class="accommodations">
+            <h2>Luxurious Accommodations</h2>
+            <div class="accommodation-container">
+                <div class="accommodation-card">
+                    <img src="../static/bedroom-1285156_1280.jpg" alt="De Luxe Room">
+                    <div class="accommodation-info">
+                        <p>2 adults mostly </p>
+                        <h3>Room Type 1</h3>
+                        <p>AVG $95.92 a night</p>
+                        <a href="#" class="book-now-btn">Book Cabin</a>
+                    </div>
+                </div>
+                <div class="accommodation-card">
+                    <img src="../static/inner-space-1026451_1280.jpg" alt="De Luxe Sea View">
+                    <div class="accommodation-info">
+                        <p>NO children mostly</p>
+                        <h3>Room Type 4</h3>
+                        <p>AVG $125.29 a night</p>
+                        <a href="#" class="book-now-btn">Book Cabin</a>
+                    </div>
+                </div>
+                <div class="accommodation-card">
+                    <img src="../static/living-room-4809587_1280.jpg" alt="The Wellhall Family Suite">
+                    <div class="accommodation-info">
+                        <p>4 adults|4 children(least common) </p>
+                        <h3>Room Type 7</h3>
+                        <p>AVG $155.20 a night</p>
+                        <a href="#" class="book-now-btn">Book Cabin</a>
+                    </div>
+                </div>
+                <div class="accommodation-card">
+                    <img src="../static/window-3178666_1280.jpg" alt="Presidential Suite">
+                    <div class="accommodation-info">
+                        <p>2 adults</p>
+                        <h3>Room Type 6</h3>
+                        <p>AVG $182.21 a night</p>
+                        <a href="#" class="book-now-btn">Book Cabin</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Updated Family Suite Section -->
+<section class="section family-suite">
+    <div class="container">
+        <div class="family-suite-content">
+            <div class="text-content">
+                <h2>Our Fantastic Selection</h2>
+                <p>WE serve three different types of food, though our type 1 dish has a wide base of lovers then comes poeple who like what thay see.</p>
+            </div>
+            <div class="image-content">
+                <img src="../static/platter-2009590_1280.jpg" alt="Luxurious Family Suite" class="image-suite">
+                <p class="caption">An intriguing caption that describes the meal types., very realistic.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.family-suite-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    transition: transform 0.3s ease;
+}
+
+.family-suite-content:hover {
+    transform: translateY(-10px);
+}
+
+.text-content {
+    max-width: 45%;
+    padding-right: 20px;
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    color: #4c3e38;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.image-content {
+    position: relative;
+    max-width: 50%;
+}
+
+.image-suite {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.image-suite:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.caption {
+    position: absolute;
+    bottom: -40px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.caption:hover {
+    background-color: #4c3e38;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .family-suite-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content, .image-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .text-content {
+        margin-bottom: 30px;
+    }
+
+    .caption {
+        position: static;
+        margin-top: 15px;
+        text-align: center;
+    }
+}
+</style>
+
+
+<!-- In the Press section -->
+<section class="section in-the-press">
+    <div class="container">
+        <h2>In the Press</h2>
+        <div class="press-slider">
+            <div class="press-item">
+                <blockquote>
+                    "Our hotel rooms are so spacious, you might get lost on the way to the bathroom! With 28,113 'Room Type 1' options, we've cornered the market on rooms where you can practice your cartwheels without knocking over a lamp. Who needs a gym when your room is the size of Rhode Island?"
+                </blockquote>
+                <p class="source">Santa clouse Post</p>
+            </div>
+            <div class="press-item">
+                <blockquote>
+                    "We've heard your complaints about parking, and we're proud to announce that 97% of our guests can now park their cars! The other 3%? Well, they're getting a crash course in creative vehicle tetris. Remember, if you can parallel park here, you can parallel park anywhere!"
+                </blockquote>
+                <p class="source">Maysone's Luxe Travels</p>
+            </div>
+            <div class="press-item">
+                <blockquote>
+                    "Online bookings are so last season. We're bringing back the charm of actually talking to people! With 64% of our market segment being 'offline,' we're single-handedly saving the art of conversation. Who knows, you might even make a friend while booking your stay!" 
+                </blockquote>
+                <p class="source">Fairtalk Journal</p>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev" aria-label="Previous review">&lt;</button>
+            <button class="next" aria-label="Next review">&gt;</button>
+        </div>
+    </div>
+</section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap');
+
+.in-the-press {
+    background-image: url('https://images.unsplash.com/photo-1534437088728-1e8b49c7e38f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.in-the-press::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.in-the-press .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.in-the-press h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    color: #e69b00;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.press-slider {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.press-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0 15px 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.press-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.press-item blockquote {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.press-item blockquote::before {
+    content: '\201C';
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+    vertical-align: -0.4em;
+    color: #e69b00;
+    font-family: 'Playfair Display', serif;
+}
+
+.press-item .source {
+    font-style: italic;
+    font-weight: 400;
+    color: #e69b00;
+}
+
+.slider-controls {
+    margin-top: 40px;
+}
+
+.slider-controls button {
+    background-color: rgba(230, 155, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(230, 155, 0, 0.8);
+    transform: scale(1.05);
+}
+</style>
+
+<!-- Footer -->
+<footer id="footer" class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Cellula Hotel</h3>
+                <p>123 Oceanview Drive<br>Coastal City, CC 12345</p>
+                <p>Phone: (555) 123-4567<br>Email: info@cellulahotel.com</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#rooms">Rooms & Suites</a></li>
+                    <li><a href="#dining">Dining</a></li>
+                    <li><a href="#spa">Spa & Wellness</a></li>
+                    <li><a href="#events">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cellula Hotel. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    // Smooth scrolling for Safari and other browsers that don't support scroll-behavior: smooth
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<style>
+.site-footer {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    padding: 60px 0 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-info, .footer-links, .footer-social, .footer-newsletter {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #e69b00;
+}
+
+.footer-info p {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-links h4, .footer-social h4, .footer-newsletter h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #e69b00;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #e69b00;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e69b00;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    background-color: #e69b00;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #d48c00;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+}
+
+.footer-bottom a {
+    color: #e69b00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-info, .footer-links, .footer-social, .footer-newsletter {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+}
+</style>
+</body>
+</html>

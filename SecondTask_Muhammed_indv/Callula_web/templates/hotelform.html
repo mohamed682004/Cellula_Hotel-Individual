@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Cancellation Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('../static/Untitled design.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .header-text {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .header-subtext {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        .prediction {
+            text-align: center;
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header-text">Hotel Cancellation Prediction</h1>
+        <p class="header-subtext">Predict if you will cancel your reservation or not</p>
+
+        <form action="{{ url_for('predictpage') }}" method="POST">
+            <div class="form-group">
+                <label for="meal-plan">Type of Meal Plan</label>
+                <select id="meal-plan" name="type_of_meal">
+                    <option value="1">Meal Plan 1</option>
+                    <option value="2">Meal Plan 2</option>
+                    <option value="0">Not Selected</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Car Parking Space</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="car_parking_space" value="0">
+                        No
+                    </label>
+                    <label>
+                        <input type="radio" name="car_parking_space" value="1" checked>
+                        Yes
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="room-type">Room Type</label>
+                <select id="room-type" name="room_type">
+                    <option value="1">Room Type 1</option>
+                    <option value="2">Room Type 2</option>
+                    <option value="4">Room Type 4</option>
+                    <option value="5">Room Type 5</option>
+                    <option value="6">Room Type 6</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="market-segment">Market Segment Type</label>
+                <select id="market-segment" name="market_segment_type">
+                    <option value="0">Offline</option>
+                    <option value="1">Online</option>
+                    <option value="2">Corporate</option>
+                    <option value="3">Aviation</option>
+                    <option value="4">Complementary</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Repeated Guest</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="repeated" value="0" checked>
+                        No
+                    </label>
+                    <label>
+                        <input type="radio" name="repeated" value="1">
+                        Yes
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lead-time">Lead Time (in days)</label>
+                <input type="number" id="lead-time" name="lead_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="average-price">Average Price (in currency unit)</label>
+                <input type="number" id="average-price" name="average_price" step="0.01" required>
+            </div>
+
+            <button type="submit">Predict Probability</button>
+        </form>
+
+        {% if prediction %}
+        <div class="prediction">
+            {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
