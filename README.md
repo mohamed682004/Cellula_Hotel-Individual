@@ -1,7 +1,5 @@
 # `CELLULA_HOTEL-INDIVIDUAL`
 
-#### <code> REPLACE-ME</code>
-
 <p align="left">
 	<img src="https://img.shields.io/github/license/mohamed682004/Cellula_Hotel-Individual?style=plastic&logo=opensourceinitiative&logoColor=white&color=2b68a2" alt="license">
 	<img src="https://img.shields.io/github/last-commit/mohamed682004/Cellula_Hotel-Individual?style=plastic&logo=git&logoColor=white&color=2b68a2" alt="last-commit">
